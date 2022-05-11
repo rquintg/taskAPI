@@ -9,19 +9,18 @@ POST http://localhost:3000/api/tasks
 Content-Type: application/json
 
 {
-    //"title": "Hacer un sitio web en vue",
-    "description": "FREElance",
-    "done": true
+   "nombre" : "hola mundo",
+   "estado" : "true"
 }
 
 ###
 //consulta un elemento por ID de mongoDB
-GET http://localhost:3000/api/tasks/6279c2aa940e286be4298e6d
+GET http://localhost:3000/api/tasks/627b438254f63e983c250e62
 
 
 ###
 // elimina documento por ID
-DELETE http://localhost:3000/api/tasks/6279f5f0902e7105e7daa8e0
+DELETE http://localhost:3000/api/tasks/627b45b01cdf6dfa3618c049
 
 ###
 // consulta los datos que tiene la propiedad done en true
@@ -29,17 +28,17 @@ GET http://localhost:3000/api/tasks/done
 
 ###
 // modifica el campo seleccionado
-PUT http://localhost:3000/api/tasks/6278c55de90fd1a8002d939f
+PUT http://localhost:3000/api/tasks/627b4868158b5c78899ee1c1
 Content-Type: application/json
 
 {
-    "description": " este en un ejemplo"
+    "nombre": " modificado"
 }
 
 ###
 // busqueda con paginacion
-GET http://localhost:3000/api/tasks?size=4&page=1
+GET http://localhost:3000/api/tasks?size=4&page=4
 
 ###
 //buscar por titulo
-GET http://localhost:3000/api/tasks?size=4&page=0&title=react
+GET http://localhost:3000/api/tasks?size=4&page=0&nombre=estesi

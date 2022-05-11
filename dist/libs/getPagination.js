@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.getPagination = void 0;
 
 var getPagination = function getPagination(page, size) {
-  var limit = size ? +size : 3;
+  var limit = size ? +size : 20;
   var offset = page ? page * limit : 0;
   return {
     limit: limit,

@@ -2,6 +2,7 @@ import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 import TasksRoutes from './routes/tasks.routes';
+import TaskEstadoEquipo from './routes/estadoequipo.routes'
 
 // app contiene la dependencia express
 
@@ -28,7 +29,8 @@ app.get('/', (req, res) => {
   res.json({ message: 'Bienvenido a la APP' });
 });
 
-// invocamos las rutas del CRUD
+// invocamos los modulos de cada CRUD
 app.use('/api/tasks', TasksRoutes);
+app.use('/api/tasks', TaskEstadoEquipo)
 
 export default app;

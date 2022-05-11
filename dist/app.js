@@ -15,6 +15,8 @@ var _cors = _interopRequireDefault(require("cors"));
 
 var _tasks = _interopRequireDefault(require("./routes/tasks.routes"));
 
+var _estadoequipo = _interopRequireDefault(require("./routes/estadoequipo.routes"));
+
 // app contiene la dependencia express
 // creamos y cofiguramos  servidor con express
 var app = (0, _express["default"])(); // coonfiguracion puerto
@@ -39,8 +41,9 @@ app.get('/', function (req, res) {
   res.json({
     message: 'Bienvenido a la APP'
   });
-}); // invocamos las rutas del CRUD
+}); // invocamos los modulos de cada CRUD
 
 app.use('/api/tasks', _tasks["default"]);
+app.use('/api/tasks', _estadoequipo["default"]);
 var _default = app;
 exports["default"] = _default;

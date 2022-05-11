@@ -5,17 +5,17 @@ const router = Router()
 
 // definimos las rutas de las peticiones
 
-router.post('/', taskctrl.createTask )
+router.post('/t', taskctrl.createTask )
 
-router.get ('/', taskctrl.findAllTasks )
+router.get ('/t', taskctrl.findAllTasks )
 
-router.get('/done', taskctrl.findAllDoneTasks)
+router.get('/t/done', taskctrl.findAllDoneTasks)
 
-router.get('/:id', taskctrl.findOneTask)
+router.get('/t/:id', taskctrl.findOneTask)
 
-router.delete('/:id', taskctrl.deleteTask)
+router.delete('/t/:id', taskctrl.deleteTask)
 
-router.put('/:id', taskctrl.updateTask)
+router.put('/t/:id', taskctrl.updateTask)
 
 
 
