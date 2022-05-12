@@ -1,4 +1,4 @@
-import Task from '../models/TasktipodeEquipo'
+import Task from '../models/Taskestadoequipo'
 import {getPagination}  from '../libs/getPagination';
 
 // asignamos las peticiones, create,delete,find,uodate...
@@ -58,7 +58,7 @@ export const findAllDoneTasks = async (req, res) => {
         res.json(task)
     } catch (error) {
             res.status(500).json({
-            message: err.message || 'algo salio mal mientras consultabamos los done true en la tarea'
+            message: error.message || 'algo salio mal mientras consultabamos los done true en la tarea'
         });
     }
 }

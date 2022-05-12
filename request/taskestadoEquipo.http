@@ -1,21 +1,21 @@
 
 ###
 // consulta todo los datos
-GET  http://localhost:3000/api/tasks
+GET  http://localhost:3000/api/task
 
 ###
 //crea un documento en la bd
-POST http://localhost:3000/api/tasks
+POST http://localhost:3000/api/task
 Content-Type: application/json
 
 {
-   "nombre" : "hola papa",
-   "estado" : "true"
+   "nombre" : "tercer dato"
+   //"estado" : "true"
 }
 
 ###
 //consulta un elemento por ID de mongoDB
-GET http://localhost:3000/api/tasks/627c64a19ffe5b8c17df0856
+GET http://localhost:3000/api/task/627c63d85c61526bee541808
 
 
 ###
@@ -24,21 +24,21 @@ DELETE http://localhost:3000/api/tasks/627b45b01cdf6dfa3618c049
 
 ###
 // consulta los datos que tiene la propiedad done en true
-GET http://localhost:3000/api/tasks/done
+GET http://localhost:3000/api/task/done
 
 ###
 // modifica el campo seleccionado
-PUT http://localhost:3000/api/tasks/627b4868158b5c78899ee1c1
+PUT http://localhost:3000/api/task/627c63d85c61526bee541808
 Content-Type: application/json
 
 {
-    "nombre": " modificado"
+    "estado": "true"
 }
 
 ###
 // busqueda con paginacion
-GET http://localhost:3000/api/tasks?size=4&page=4
+GET http://localhost:3000/api/task/?size=4&page=4
 
 ###
 //buscar por titulo
-GET http://localhost:3000/api/tasks?size=4&page=0&nombre=estesi
+GET http://localhost:3000/api/task/?size=4&page=0&nombre=estesi

@@ -11,7 +11,7 @@ var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"))
 
 var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
 
-var _TasktipodeEquipo = _interopRequireDefault(require("../models/TasktipodeEquipo"));
+var _Taskestadoequipo = _interopRequireDefault(require("../models/Taskestadoequipo"));
 
 var _getPagination2 = require("../libs/getPagination");
 
@@ -34,7 +34,7 @@ var findAllTasks = /*#__PURE__*/function () {
             } : {};
             _getPagination = (0, _getPagination2.getPagination)(page, size), limit = _getPagination.limit, offset = _getPagination.offset;
             _context.next = 6;
-            return _TasktipodeEquipo["default"].paginate(condition, {
+            return _Taskestadoequipo["default"].paginate(condition, {
               offset: offset,
               limit: limit
             });
@@ -91,7 +91,7 @@ var createTask = /*#__PURE__*/function () {
           case 2:
             _context2.prev = 2;
             // console.log(req.body)
-            newTasks = new _TasktipodeEquipo["default"]({
+            newTasks = new _Taskestadoequipo["default"]({
               nombre: req.body.nombre,
               estado: req.body.estado ? req.body.estado : false
             });
@@ -136,7 +136,7 @@ var findAllDoneTasks = /*#__PURE__*/function () {
           case 0:
             _context3.prev = 0;
             _context3.next = 3;
-            return _TasktipodeEquipo["default"].find({
+            return _Taskestadoequipo["default"].find({
               estado: true
             });
 
@@ -150,7 +150,7 @@ var findAllDoneTasks = /*#__PURE__*/function () {
             _context3.prev = 7;
             _context3.t0 = _context3["catch"](0);
             res.status(500).json({
-              message: err.message || 'algo salio mal mientras consultabamos los done true en la tarea'
+              message: _context3.t0.message || 'algo salio mal mientras consultabamos los done true en la tarea'
             });
 
           case 10:
@@ -179,7 +179,7 @@ var findOneTask = /*#__PURE__*/function () {
             id = req.params.id; //console.log(req.params.id)
 
             _context4.next = 4;
-            return _TasktipodeEquipo["default"].findById(id);
+            return _Taskestadoequipo["default"].findById(id);
 
           case 4:
             task = _context4.sent;
@@ -229,7 +229,7 @@ var deleteTask = /*#__PURE__*/function () {
           case 0:
             _context5.prev = 0;
             _context5.next = 3;
-            return _TasktipodeEquipo["default"].findByIdAndDelete(req.params.id);
+            return _Taskestadoequipo["default"].findByIdAndDelete(req.params.id);
 
           case 3:
             data = _context5.sent;
@@ -270,7 +270,7 @@ var updateTask = /*#__PURE__*/function () {
           case 0:
             _context6.prev = 0;
             _context6.next = 3;
-            return _TasktipodeEquipo["default"].findByIdAndUpdate(req.params.id, req.body);
+            return _Taskestadoequipo["default"].findByIdAndUpdate(req.params.id, req.body);
 
           case 3:
             updatetask = _context6.sent;

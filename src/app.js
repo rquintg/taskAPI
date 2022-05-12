@@ -2,7 +2,8 @@ import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 import TasksRoutes from './routes/tasks.routes';
-import TaskEstadoEquipo from './routes/tipoequipo.routes'
+import TaskTipoEquipo from './routes/tipoequipo.routes'
+import TaskEstadoEquipo from './routes/estadoequipo.routes'
 
 // app contiene la dependencia express
 
@@ -31,6 +32,7 @@ app.get('/', (req, res) => {
 
 // invocamos los modulos de cada CRUD
 app.use('/api/tasks', TasksRoutes);
-app.use('/api/tasks', TaskEstadoEquipo)
+app.use('/api/tasks', TaskTipoEquipo)
+app.use('/api/task', TaskEstadoEquipo)
 
 export default app;

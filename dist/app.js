@@ -15,6 +15,8 @@ var _cors = _interopRequireDefault(require("cors"));
 
 var _tasks = _interopRequireDefault(require("./routes/tasks.routes"));
 
+var _tipoequipo = _interopRequireDefault(require("./routes/tipoequipo.routes"));
+
 var _estadoequipo = _interopRequireDefault(require("./routes/estadoequipo.routes"));
 
 // app contiene la dependencia express
@@ -44,6 +46,7 @@ app.get('/', function (req, res) {
 }); // invocamos los modulos de cada CRUD
 
 app.use('/api/tasks', _tasks["default"]);
-app.use('/api/tasks', _estadoequipo["default"]);
+app.use('/api/tasks', _tipoequipo["default"]);
+app.use('/api/task', _estadoequipo["default"]);
 var _default = app;
 exports["default"] = _default;
