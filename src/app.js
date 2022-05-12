@@ -2,7 +2,7 @@ import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 import TasksRoutes from './routes/tasks.routes';
-import TaskEstadoEquipo from './routes/estadoequipo.routes'
+import TaskEstadoEquipo from './routes/tipoequipo.routes'
 
 // app contiene la dependencia express
 
