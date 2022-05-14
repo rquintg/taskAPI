@@ -1,5 +1,5 @@
 import {Router} from 'express'
-import * as taskctrl from '../controllers/task.tipodeequipo'
+import * as taskctrl from '../controllers/task.usuarios'
 
 const router = Router()
 

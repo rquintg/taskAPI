@@ -39,6 +39,7 @@ export const createTask = async (req, res) => {
         // console.log(req.body)
         const newTasks = new Task({
         nombre: req.body.nombre,
+        tipoEquipo: req.body.tipoEquipo,
         estado: req.body.estado ? req.body.estado : false
        })
     const taskSave = await newTasks.save();

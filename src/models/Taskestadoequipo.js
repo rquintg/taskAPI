@@ -14,6 +14,10 @@
          type: Boolean,
          default: false
      },
+     estadoEquipo: {
+        type: String,
+        default: "bodega"
+     },
  },{
      versionKey: false,
      timestamps: true

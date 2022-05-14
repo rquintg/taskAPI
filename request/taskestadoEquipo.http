@@ -9,8 +9,9 @@ POST http://localhost:3000/api/task
 Content-Type: application/json
 
 {
-   "nombre" : "tercer dato"
-   //"estado" : "true"
+   "nombre" : "laptoppro",
+   "estado" : "true",
+   "estadoEquipo": "en uso"
 }
 
 ###

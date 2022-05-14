@@ -4,6 +4,7 @@ import cors from 'cors';
 import TasksRoutes from './routes/tasks.routes';
 import TaskTipoEquipo from './routes/tipoequipo.routes'
 import TaskEstadoEquipo from './routes/estadoequipo.routes'
+import Taskusuarios from './routes/usuarios.routes'
 
 // app contiene la dependencia express
 
@@ -34,5 +35,6 @@ app.get('/', (req, res) => {
 app.use('/api/tasks', TasksRoutes);
 app.use('/api/tasks', TaskTipoEquipo)
 app.use('/api/task', TaskEstadoEquipo)
+app.use('/api/users',Taskusuarios)
 
 export default app;

@@ -9,8 +9,9 @@ POST http://localhost:3000/api/tasks
 Content-Type: application/json
 
 {
-   "nombre" : "hola papa",
-   "estado" : "true"
+   "nombre" : "hola mundo",
+   "estado" : "true",
+   "tipoEquipo" : "computador"
 }
 
 ###
@@ -20,7 +21,7 @@ GET http://localhost:3000/api/tasks/627c64a19ffe5b8c17df0856
 
 ###
 // elimina documento por ID
-DELETE http://localhost:3000/api/tasks/627b45b01cdf6dfa3618c049
+DELETE http://localhost:3000/api/tasks/627b4a38158b5c78899ee1c4
 
 ###
 // consulta los datos que tiene la propiedad done en true

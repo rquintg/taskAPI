@@ -14,7 +14,7 @@
          type: Boolean,
          default: false
      },
-     tipoEquipo: {
+     email: {
         type: String,
      },
  },{
@@ -23,4 +23,4 @@
  });
 
  taskShema.plugin(mongoosepaginate);
- export default model('tipo_de_equipos', taskShema)
+ export default model('usuarios', taskShema)

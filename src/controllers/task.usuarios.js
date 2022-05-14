@@ -1,4 +1,4 @@
-import Task from '../models/Taskestadoequipo'
+import Task from '../models/Taskusuarios'
 import {getPagination}  from '../libs/getPagination';
 
 // asignamos las peticiones, create,delete,find,uodate...
@@ -39,8 +39,8 @@ export const createTask = async (req, res) => {
         // console.log(req.body)
         const newTasks = new Task({
         nombre: req.body.nombre,
-        estado: req.body.estado ? req.body.estado : false,
-        estadoEquipo: req.body.estadoEquipo ? req.body.estadoEquipo : "bodega"
+        email: req.body.email,
+        estado: req.body.estado ? req.body.estado : false
        })
     const taskSave = await newTasks.save();
     // console.log(newTasks)
@@ -59,7 +59,7 @@ export const findAllDoneTasks = async (req, res) => {
         res.json(task)
     } catch (error) {
             res.status(500).json({
-            message: error.message || 'algo salio mal mientras consultabamos los done true en la tarea'
+            message: err.message || 'algo salio mal mientras consultabamos los done true en la tarea'
         });
     }
 }
