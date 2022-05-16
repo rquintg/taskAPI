@@ -17,6 +17,10 @@
      tipoEquipo: {
         type: String,
      },
+     usuarios: {
+        type: Schema.Types.ObjectId,
+        ref: 'usuarios'
+    }
  },{
      versionKey: false,
      timestamps: true

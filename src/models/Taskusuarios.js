@@ -7,7 +7,7 @@
  const taskShema = new Schema({
      nombre: {
          type: String,
-         Required: true,
+         Required: [true, 'Por favor ingresar un nombre de usuario'],
          trim: true
      },
      estado: {
@@ -16,6 +16,8 @@
      },
      email: {
         type: String,
+        Required: [true, 'Por favor ingresar un correo electronico'],
+        unique: true
      },
  },{
      versionKey: false,

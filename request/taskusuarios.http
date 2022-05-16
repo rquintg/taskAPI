@@ -1,0 +1,45 @@
+
+###
+// consulta todo los datos
+GET  http://localhost:3000/api/users
+
+###
+//crea un documento en la bd
+POST http://localhost:3000/api/users
+Content-Type: application/json
+
+{
+   "nombre" : "roberto",
+   "estado" : "true",
+   "email" : "cliente@siincorreo.com"
+}
+
+###
+//consulta un elemento por ID de mongoDB
+GET http://localhost:3000/api/users/627c64a19ffe5b8c17df0856
+
+
+###
+// elimina documento por ID
+DELETE http://localhost:3000/api/users/627b4a38158b5c78899ee1c4
+
+###
+// consulta los datos que tiene la propiedad done en true
+GET http://localhost:3000/api/users/done
+
+###
+// modifica el campo seleccionado
+PUT http://localhost:3000/api/users/627b4868158b5c78899ee1c1
+Content-Type: application/json
+
+{
+    "nombre": " modificado"
+}
+
+###
+// busqueda con paginacion
+GET http://localhost:3000/api/users?size=4&page=4
+
+###
+//buscar por titulo
+GET http://localhost:3000/api/users?size=4&page=0&nombre=estesi
