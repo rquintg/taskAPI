@@ -2,6 +2,7 @@
 # variable de entorno
 .env
 .babelrc
-DS_Store
+.DS_Store
 node_modules
 README.MD
+DS_Store
