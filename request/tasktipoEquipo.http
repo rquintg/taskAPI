@@ -10,8 +10,8 @@ Content-Type: application/json
 
 {
    "nombre" : "alienware",
-   "estado" : "true",
-   "tipoEquipo" : "computador"
+   "estado" : "true"
+   
 }
 
 ###

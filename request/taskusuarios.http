@@ -9,9 +9,9 @@ POST http://localhost:3000/api/users
 Content-Type: application/json
 
 {
-   "nombre" : "roberto",
+   "nombre" : "ricardo",
    "estado" : "true",
-   "email" : "cliente@siincorreo.com"
+   "email" : "cliente@correo.com"
 }
 
 ###

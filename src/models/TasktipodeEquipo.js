@@ -14,9 +14,6 @@
          type: Boolean,
          default: false
      },
-     tipoEquipo: {
-        type: String,
-     },
      usuarios: {
         type: Schema.Types.ObjectId,
         ref: 'usuarios'

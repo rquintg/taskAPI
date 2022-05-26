@@ -12,7 +12,8 @@
      },
      estado: {
          type: Boolean,
-         default: false
+         default: false,
+         required: true
      },
      email: {
         type: String,

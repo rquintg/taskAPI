@@ -1,4 +1,5 @@
 import Task from '../models/TasktipodeEquipo'
+import usuarios from '../models/Taskusuarios'
 import {getPagination}  from '../libs/getPagination';
 
 // asignamos las peticiones, create,delete,find,uodate...
@@ -36,11 +37,24 @@ export const createTask = async (req, res) => {
     }
 
    try {
+        const email = req.body.usuarios.email;
+        const nombre = req.body.nombre;
+
+        const tipoEquipoBD = await Task.findOne({ nombre });
+        if(tipoEquipoBD){// ya existe el equipo
+        return res.status(400).send({message: 'Ya existe tipo equipo'});
+        }
+        const usuarioBD = await usuarios.findOne({ email });
+        
+        if(!usuarioBD){// no existe usuario
+            return res.status(404).send({ message: 'No existe usuario'});
+        }
         // console.log(req.body)
+        
         const newTasks = new Task({
         nombre: req.body.nombre,
-        tipoEquipo: req.body.tipoEquipo,
-        estado: req.body.estado ? req.body.estado : false
+        estado: req.body.estado ? req.body.estado : false,
+        usuarios: usuarioBD._id
        })
     const taskSave = await newTasks.save();
     // console.log(newTasks)
