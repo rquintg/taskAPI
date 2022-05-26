@@ -9,8 +9,11 @@ POST http://localhost:3000/api/tasks
 Content-Type: application/json
 
 {
-   "nombre" : "alienware",
-   "estado" : "true"
+   "nombre" : "serv",
+   "estado" : "true",
+   "usuarios" :  {
+       "email" : "cliente@siincorreo.com"
+   }
    
 }
 
@@ -29,11 +32,12 @@ GET http://localhost:3000/api/tasks/done
 
 ###
 // modifica el campo seleccionado
-PUT http://localhost:3000/api/tasks/627b4868158b5c78899ee1c1
+PUT http://localhost:3000/api/tasks/628ee19a5f7d61c751fd42fc
 Content-Type: application/json
 
 {
-    "nombre": " modificado"
+    "nombre": "servidor",
+    "estado": "false"
 }
 
 ###

@@ -7,7 +7,7 @@
  const taskShema = new Schema({
      nombre: {
          type: String,
-         Required: true,
+         required: true,
          trim: true
      },
      estado: {
