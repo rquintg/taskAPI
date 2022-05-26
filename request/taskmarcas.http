@@ -1,0 +1,44 @@
+
+###
+// consulta todo los datos
+GET  http://localhost:3000/api/brands
+
+###
+//crea un documento en la bd
+POST http://localhost:3000/api/brands
+Content-Type: application/json
+
+{
+   "nombre" : "lenovo",
+   "estado" : "true"
+}
+
+###
+//consulta un elemento por ID de mongoDB
+GET http://localhost:3000/api/brands/628ef069c0e646b4a54edcdc
+
+
+###
+// elimina documento por ID
+DELETE http://localhost:3000/api/brands/627b45b01cdf6dfa3618c049
+
+###
+// consulta los datos que tiene la propiedad done en true
+GET http://localhost:3000/api/brands/done
+
+###
+// modifica el campo seleccionado
+PUT http://localhost:3000/api/brands/628f0dbd6a8501046657f31b
+Content-Type: application/json
+
+{
+    "estado": "true"
+}
+
+###
+// busqueda con paginacion
+GET http://localhost:3000/api/brands/?size=4&page=4
+
+###
+//buscar por titulo
+GET http://localhost:3000/api/brands/?size=1&page=0&nombre=bodega
