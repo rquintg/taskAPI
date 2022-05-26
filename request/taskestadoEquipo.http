@@ -9,14 +9,13 @@ POST http://localhost:3000/api/task
 Content-Type: application/json
 
 {
-   "nombre" : "laptoppro",
-   "estado" : "true",
-   "estadoEquipo": "en uso"
+   "nombre" : "depreciado",
+   "estado" : ""
 }
 
 ###
 //consulta un elemento por ID de mongoDB
-GET http://localhost:3000/api/task/627c63d85c61526bee541808
+GET http://localhost:3000/api/task/628ef069c0e646b4a54edcdc
 
 
 ###
@@ -42,4 +41,4 @@ GET http://localhost:3000/api/task/?size=4&page=4
 
 ###
 //buscar por titulo
-GET http://localhost:3000/api/task/?size=4&page=0&nombre=estesi
+GET http://localhost:3000/api/task/?size=1&page=0&nombre=bodega

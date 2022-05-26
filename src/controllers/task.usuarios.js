@@ -1,7 +1,7 @@
 import Task from '../models/Taskusuarios'
 import {getPagination}  from '../libs/getPagination';
 
-// asignamos las peticiones, create,delete,find,uodate...
+// asignamos las peticiones, create,delete,find,update...
 
 export const findAllTasks = async (req, res) => {
     try {

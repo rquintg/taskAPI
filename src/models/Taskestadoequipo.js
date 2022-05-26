@@ -7,17 +7,14 @@
  const taskShema = new Schema({
      nombre: {
          type: String,
-         Required: true,
+         required: true,
          trim: true
      },
      estado: {
          type: Boolean,
+         require : true,
          default: false
-     },
-     estadoEquipo: {
-        type: String,
-        default: "bodega"
-     },
+     }
  },{
      versionKey: false,
      timestamps: true
