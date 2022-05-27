@@ -6,6 +6,7 @@ import TaskTipoEquipo from './routes/tipoequipo.routes'
 import TaskEstadoEquipo from './routes/estadoequipo.routes'
 import Taskusuarios from './routes/usuarios.routes'
 import Taskmarcas from './routes/marcas.routes'
+import Taskinventario from './routes/inventario.routes'
 
 // app contiene la dependencia express
 
@@ -38,5 +39,6 @@ app.use('/api/tasks', TaskTipoEquipo)
 app.use('/api/task', TaskEstadoEquipo)
 app.use('/api/users',Taskusuarios)
 app.use('/api/brands', Taskmarcas)
+app.use('/api/inventory', Taskinventario)
 
 export default app;

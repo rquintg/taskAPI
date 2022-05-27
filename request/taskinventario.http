@@ -1,0 +1,28 @@
+
+###
+// consulta todo los datos
+GET  http://localhost:3000/api/inventory
+
+###
+//crea un documento en la bd
+POST http://localhost:3000/api/inventory
+Content-Type: application/json
+
+{
+   "serial" : "1-2qqqqq-xxss3-4",
+   "modelo" : "20qqqxx1ss9",
+   "descripcion" : "descripcion",
+   "foto" : "foto",
+   "color" : "rojo",
+   "precio" : "456",
+   "usuarios" :  {
+       "email" : "cliente@siincorreo.com"
+   },
+   "marcas" : {
+       "nombre" : "lenovo"
+   },
+   "estados" : {
+       "nombre" : "en uso"
+   }
+   
+}
