@@ -44,15 +44,15 @@ const taskShema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'estados_de_equipo',
         required: true
-    }
-    //  tipoEquipos: {
-    //      type: Schema.Types.ObjectId,
-    //      ref: 'tipo_de_equipos',
-    //      required: true
-    //  }
+    },
+     tipoEquipos: {
+         type: Schema.Types.ObjectId,
+         ref: 'tipo_de_equipos',
+         required: true
+     }
 },{
     versionKey: false,
 });
 
 taskShema.plugin(mongoosepaginate);
-export default model('inventario', taskShema)
+export default model('inventarios', taskShema)

@@ -11,8 +11,8 @@ router.get ('/', taskctrl.findAllTasks )
 
 router.get('/:id', taskctrl.findOneTask)
 
-//router.delete('/:id', taskctrl.deleteTask)
+router.delete('/:id', taskctrl.deleteTask)
 
-//router.put('/:id', taskctrl.updateTask)
+router.put('/:id', taskctrl.updateTask)
 
 export default router
