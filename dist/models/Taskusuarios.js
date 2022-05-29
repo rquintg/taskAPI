@@ -15,13 +15,18 @@ var _mongoosePaginateV = _interopRequireDefault(require("mongoose-paginate-v2"))
 var taskShema = new _mongoose.Schema({
   nombre: {
     type: String,
-    required: true,
+    Required: [true, 'Por favor ingresar un nombre de usuario'],
     trim: true
   },
   estado: {
     type: Boolean,
-    require: true,
-    "default": false
+    "default": false,
+    required: true
+  },
+  email: {
+    type: String,
+    Required: [true, 'Por favor ingresar un correo electronico'],
+    unique: true
   }
 }, {
   versionKey: false,
@@ -29,6 +34,6 @@ var taskShema = new _mongoose.Schema({
 });
 taskShema.plugin(_mongoosePaginateV["default"]);
 
-var _default = (0, _mongoose.model)('estado_de_equipos', taskShema);
+var _default = (0, _mongoose.model)('usuarios', taskShema);
 
 exports["default"] = _default;

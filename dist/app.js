@@ -19,6 +19,12 @@ var _tipoequipo = _interopRequireDefault(require("./routes/tipoequipo.routes"));
 
 var _estadoequipo = _interopRequireDefault(require("./routes/estadoequipo.routes"));
 
+var _usuarios = _interopRequireDefault(require("./routes/usuarios.routes"));
+
+var _marcas = _interopRequireDefault(require("./routes/marcas.routes"));
+
+var _inventario = _interopRequireDefault(require("./routes/inventario.routes"));
+
 // app contiene la dependencia express
 // creamos y cofiguramos  servidor con express
 var app = (0, _express["default"])(); // coonfiguracion puerto
@@ -48,5 +54,8 @@ app.get('/', function (req, res) {
 app.use('/api/tasks', _tasks["default"]);
 app.use('/api/tasks', _tipoequipo["default"]);
 app.use('/api/task', _estadoequipo["default"]);
+app.use('/api/users', _usuarios["default"]);
+app.use('/api/brands', _marcas["default"]);
+app.use('/api/inventory', _inventario["default"]);
 var _default = app;
 exports["default"] = _default;

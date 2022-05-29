@@ -29,6 +29,6 @@ var taskShema = new _mongoose.Schema({
 });
 taskShema.plugin(_mongoosePaginateV["default"]);
 
-var _default = (0, _mongoose.model)('estado_de_equipos', taskShema);
+var _default = (0, _mongoose.model)('marcas', taskShema);
 
 exports["default"] = _default;

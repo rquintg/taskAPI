@@ -9,7 +9,7 @@ exports["default"] = void 0;
 
 var _express = require("express");
 
-var taskctrl = _interopRequireWildcard(require("../controllers/task.tipodeequipo"));
+var taskctrl = _interopRequireWildcard(require("../controllers/task.inventario"));
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -17,8 +17,8 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 
 var router = (0, _express.Router)();
 router.post('/', taskctrl.createTask);
-router.get('/', taskctrl.findAllTasks);
-router.get('/done', taskctrl.findAllDoneTasks);
+router.get('/', taskctrl.findAllTasks); //outer.get('/done', taskctrl.findAllDoneTasks)
+
 router.get('/:id', taskctrl.findOneTask);
 router["delete"]('/:id', taskctrl.deleteTask);
 router.put('/:id', taskctrl.updateTask);

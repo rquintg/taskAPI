@@ -15,12 +15,16 @@ var _mongoosePaginateV = _interopRequireDefault(require("mongoose-paginate-v2"))
 var taskShema = new _mongoose.Schema({
   nombre: {
     type: String,
-    Required: true,
+    required: true,
     trim: true
   },
   estado: {
     type: Boolean,
     "default": false
+  },
+  usuarios: {
+    type: _mongoose.Schema.Types.ObjectId,
+    ref: 'usuarios'
   }
 }, {
   versionKey: false,

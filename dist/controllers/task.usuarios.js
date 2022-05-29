@@ -11,11 +11,11 @@ var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"))
 
 var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
 
-var _Taskestadoequipo = _interopRequireDefault(require("../models/Taskestadoequipo"));
+var _Taskusuarios = _interopRequireDefault(require("../models/Taskusuarios"));
 
 var _getPagination2 = require("../libs/getPagination");
 
-// asignamos las peticiones, create,delete,find,uodate...
+// asignamos las peticiones, create,delete,find,update...
 var findAllTasks = /*#__PURE__*/function () {
   var _ref = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(req, res) {
     var _req$query, size, page, nombre, condition, _getPagination, limit, offset, task;
@@ -34,7 +34,7 @@ var findAllTasks = /*#__PURE__*/function () {
             } : {};
             _getPagination = (0, _getPagination2.getPagination)(page, size), limit = _getPagination.limit, offset = _getPagination.offset;
             _context.next = 6;
-            return _Taskestadoequipo["default"].paginate(condition, {
+            return _Taskusuarios["default"].paginate(condition, {
               offset: offset,
               limit: limit
             });
@@ -54,7 +54,7 @@ var findAllTasks = /*#__PURE__*/function () {
             _context.prev = 10;
             _context.t0 = _context["catch"](0);
             res.status(500).json({
-              message: _context.t0.message || 'algo salio mal mientras consultabamos el estado de equipo'
+              message: _context.t0.message || 'algo salio mal mientras consultabamos la tarea'
             });
 
           case 13:
@@ -74,7 +74,7 @@ exports.findAllTasks = findAllTasks;
 
 var createTask = /*#__PURE__*/function () {
   var _ref2 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee2(req, res) {
-    var nombre, estadoBD, newTasks, taskSave;
+    var newTasks, taskSave;
     return _regenerator["default"].wrap(function _callee2$(_context2) {
       while (1) {
         switch (_context2.prev = _context2.next) {
@@ -85,58 +85,40 @@ var createTask = /*#__PURE__*/function () {
             }
 
             return _context2.abrupt("return", res.status(400).send({
-              message: 'El estado no puede estar vacio'
+              message: 'El contenido no puede estar vacio'
             }));
 
           case 2:
             _context2.prev = 2;
-            nombre = req.body.nombre;
-            _context2.next = 6;
-            return _Taskestadoequipo["default"].findOne({
-              nombre: nombre
-            });
-
-          case 6:
-            estadoBD = _context2.sent;
-
-            if (!estadoBD) {
-              _context2.next = 9;
-              break;
-            }
-
-            return _context2.abrupt("return", res.status(400).send({
-              message: "El estado de equipo: ".concat(nombre, " ya existe")
-            }));
-
-          case 9:
             // console.log(req.body)
-            newTasks = new _Taskestadoequipo["default"]({
+            newTasks = new _Taskusuarios["default"]({
               nombre: req.body.nombre,
+              email: req.body.email,
               estado: req.body.estado ? req.body.estado : false
             });
-            _context2.next = 12;
+            _context2.next = 6;
             return newTasks.save();
 
-          case 12:
+          case 6:
             taskSave = _context2.sent;
             // console.log(newTasks)
             res.json(taskSave);
-            _context2.next = 19;
+            _context2.next = 13;
             break;
 
-          case 16:
-            _context2.prev = 16;
+          case 10:
+            _context2.prev = 10;
             _context2.t0 = _context2["catch"](2);
             res.status(500).json({
-              message: _context2.t0.message || 'algo salio mal mientras creabamos el estado'
+              message: _context2.t0.message || 'algo salio mal mientras creabamos la tarea'
             });
 
-          case 19:
+          case 13:
           case "end":
             return _context2.stop();
         }
       }
-    }, _callee2, null, [[2, 16]]);
+    }, _callee2, null, [[2, 10]]);
   }));
 
   return function createTask(_x3, _x4) {
@@ -155,7 +137,7 @@ var findAllDoneTasks = /*#__PURE__*/function () {
           case 0:
             _context3.prev = 0;
             _context3.next = 3;
-            return _Taskestadoequipo["default"].find({
+            return _Taskusuarios["default"].find({
               estado: true
             });
 
@@ -169,7 +151,7 @@ var findAllDoneTasks = /*#__PURE__*/function () {
             _context3.prev = 7;
             _context3.t0 = _context3["catch"](0);
             res.status(500).json({
-              message: _context3.t0.message || 'algo salio mal mientras consultabamos los estados de equipo activos'
+              message: err.message || 'algo salio mal mientras consultabamos los done true en la tarea'
             });
 
           case 10:
@@ -198,7 +180,7 @@ var findOneTask = /*#__PURE__*/function () {
             id = req.params.id; //console.log(req.params.id)
 
             _context4.next = 4;
-            return _Taskestadoequipo["default"].findById(id);
+            return _Taskusuarios["default"].findById(id);
 
           case 4:
             task = _context4.sent;
@@ -209,7 +191,7 @@ var findOneTask = /*#__PURE__*/function () {
             }
 
             return _context4.abrupt("return", res.status(404).json({
-              message: "El estado de equipo: ".concat(id, " no existe")
+              message: "El tipo de equipo: ".concat(id, " no existe")
             }));
 
           case 7:
@@ -221,7 +203,7 @@ var findOneTask = /*#__PURE__*/function () {
             _context4.prev = 10;
             _context4.t0 = _context4["catch"](0);
             res.status(500).json({
-              message: _context4.t0.message || 'algo salio mal mientras consultabamos por ID en estado de equipo'
+              message: _context4.t0.message || 'algo salio mal mientras consultabamos por ID en tipo de equipo'
             });
 
           case 13:
@@ -248,7 +230,7 @@ var deleteTask = /*#__PURE__*/function () {
           case 0:
             _context5.prev = 0;
             _context5.next = 3;
-            return _Taskestadoequipo["default"].findByIdAndDelete(req.params.id);
+            return _Taskusuarios["default"].findByIdAndDelete(req.params.id);
 
           case 3:
             data = _context5.sent;
@@ -262,7 +244,7 @@ var deleteTask = /*#__PURE__*/function () {
             _context5.prev = 7;
             _context5.t0 = _context5["catch"](0);
             res.status(500).json({
-              message: 'algo salio mal mientras eliminabamos un estado de equipo'
+              message: 'algo salio mal mientras eliminabamos un equipo'
             });
 
           case 10:
@@ -282,54 +264,36 @@ exports.deleteTask = deleteTask;
 
 var updateTask = /*#__PURE__*/function () {
   var _ref6 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee6(req, res) {
-    var id, task, updatetask;
+    var updatetask;
     return _regenerator["default"].wrap(function _callee6$(_context6) {
       while (1) {
         switch (_context6.prev = _context6.next) {
           case 0:
             _context6.prev = 0;
-            id = req.params.id; //console.log(req.params.id)
+            _context6.next = 3;
+            return _Taskusuarios["default"].findByIdAndUpdate(req.params.id, req.body);
 
-            _context6.next = 4;
-            return _Taskestadoequipo["default"].findById(id);
-
-          case 4:
-            task = _context6.sent;
-
-            if (task) {
-              _context6.next = 7;
-              break;
-            }
-
-            return _context6.abrupt("return", res.status(404).json({
-              message: "El estado de equipo: ".concat(id, " no existe")
-            }));
-
-          case 7:
-            _context6.next = 9;
-            return _Taskestadoequipo["default"].findByIdAndUpdate(req.params.id, req.body);
-
-          case 9:
+          case 3:
             updatetask = _context6.sent;
             res.json({
               message: "".concat(updatetask.nombre, " se ha modificado correctamente")
             });
-            _context6.next = 16;
+            _context6.next = 10;
             break;
 
-          case 13:
-            _context6.prev = 13;
+          case 7:
+            _context6.prev = 7;
             _context6.t0 = _context6["catch"](0);
             res.status(500).json({
-              message: 'algo salio mal mientras actualizabamos el estado de equipo'
+              message: 'algo salio mal mientras actualizabamos en la tarea'
             });
 
-          case 16:
+          case 10:
           case "end":
             return _context6.stop();
         }
       }
-    }, _callee6, null, [[0, 13]]);
+    }, _callee6, null, [[0, 7]]);
   }));
 
   return function updateTask(_x11, _x12) {

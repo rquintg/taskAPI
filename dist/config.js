@@ -10,6 +10,6 @@ var _dotenv = require("dotenv");
 (0, _dotenv.config)(); // usamos el modulo dotenv el que nos permite darle seguridad a las conexiones importantes como la ruta de la bd o puerto en un archivo .env
 
 var _default = {
-  mongodbURL: process.env.MONGODB_URI
+  mongodbURL: process.env.MONGODB_URIEXT
 };
 exports["default"] = _default;
