@@ -1,13 +1,17 @@
-# apiREST NodeJS & MongoDB & Express V 2.0
+# ApiREST NodeJS & MongoDB & Express V 2.0
 
 Aplicacion practica de un CRUD desplegada en NodeJS, MongoDB, usando Express y Babel
 
-## Table of Contents
-1. [Info General](#Comenzando)
-2. [Pre-requisitos](#Pre-requisitos)
-3. [Instalacion](#Instalación)
-4. [Ejecucion de la API](#Ejecutando-la-API)
-5. [Despliegue](#Despliegue)
+<p align="center">
+<a href="https://github.com/rquintg"><img src="https://miro.medium.com/max/1400/1*M10QaO1mZCk_jvH2EBNmaQ.jpeg" alt="node express mongoDB"></a>
+</p>
+
+## Tabla de contenido
+1. [Info General](#Comenzando-)
+2. [Pre-requisitos](#Pre-requisitos-)
+3. [Instalacion](#Instalación-)
+4. [Ejecucion de la API](#Ejecutando-la-API-)
+5. [Despliegue](#Despliegue-)
 
 ## Comenzando 🚀
 
