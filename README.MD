@@ -3,11 +3,11 @@
 Aplicacion practica de un CRUD desplegada en NodeJS, MongoDB, usando Express y Babel
 
 <p align="center">
-<a href="https://github.com/rquintg"><img src="https://miro.medium.com/max/1400/1*M10QaO1mZCk_jvH2EBNmaQ.jpeg" alt="node express mongoDB"></a>
+<a href="https://github.com/rquintg"><img src="https://miro.medium.com/max/1400/1*M10QaO1mZCk_jvH2EBNmaQ.jpeg" style="width:600px !important; height:300px !important" alt="node express mongoDB"></a>
 </p>
 
 ## Tabla de contenido
-1. [Info General](#Comenzando-)
+1. [Info General](#Tabla-de-contenido)
 2. [Pre-requisitos](#Pre-requisitos-)
 3. [Instalacion](#Instalación-)
 4. [Ejecucion de la API](#Ejecutando-la-API-)
@@ -48,7 +48,7 @@ $ npm start
 
 ## Ejecutando la API ⚙️
 
-Consola
+_Consola_
 ```
 $ npm run dev  #iniciamos en modo DEV con babel
 or
@@ -58,8 +58,8 @@ $ npm start # desplegamos en modo producion
 
 ### Analice las pruebas end-to-end 🔩
 
-Se debe de usar la extencion REST Client
-https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+Se debe de usar la extencion [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)
+
 
 ```
 En la carpeta request estan las peticiones HTTP para usar los metodos GET, POST, UPDATE, DELETE, etc.
@@ -68,7 +68,7 @@ En la carpeta request estan las peticiones HTTP para usar los metodos GET, POST,
 
 ## Despliegue 📦
 
-Consola
+_Consola_
 ```
 $ npm run build  # para ejecutar babel
 $ npm start # desplegamos en modo producion
