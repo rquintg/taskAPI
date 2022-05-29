@@ -11,7 +11,7 @@ Content-Type: application/json
 {
    "nombre" : "ricardo",
    "estado" : "true",
-   "email" : "cliente@correo.com"
+   "email" : "cliente@iudigital.com"
 }
 
 ###

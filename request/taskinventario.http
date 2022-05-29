@@ -9,20 +9,47 @@ POST http://localhost:3000/api/inventory
 Content-Type: application/json
 
 {
-   "serial" : "1-2qqqqq-xxss3-4",
-   "modelo" : "20qqqxx1ss9",
+   "serial" : "1-2-3",
+   "modelo" : "2018",
    "descripcion" : "descripcion",
    "foto" : "foto",
    "color" : "rojo",
    "precio" : "456",
-   "usuarios" :  {
-       "email" : "cliente@siincorreo.com"
-   },
-   "marcas" : {
-       "nombre" : "lenovo"
-   },
-   "estados" : {
-       "nombre" : "en uso"
-   }
+   "email" : "cliente@gmail.com",
+   "marcas" :"lenovo",
+   "estados" : "depreciado",
+   "tipoEquipos" : "computo"
+   
    
 }
+
+###
+//consulta un elemento por ID de mongoDB
+GET http://localhost:3000/api/inventory/629070fe33dac870b6f94068
+
+
+###
+// elimina documento por ID
+DELETE http://localhost:3000/api/inventory/6290713933dac870b6f94070
+
+###
+// consulta los datos que tiene la propiedad done en true
+GET http://localhost:3000/api/inventory/done
+
+###
+// modifica el campo seleccionado
+PUT http://localhost:3000/api/inventory/6290713933dac870b6f94070
+Content-Type: application/json
+
+{
+    "descripcion" : "descripcion modificada",
+    "color" : "azul"
+}
+
+###
+// busqueda con paginacion
+GET http://localhost:3000/api/inventory?size=4&page=4
+
+###
+//buscar por titulo
+GET http://localhost:3000/api/inventory?size=4&page=0&nombre=estesi

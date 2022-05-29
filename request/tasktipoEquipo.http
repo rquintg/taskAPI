@@ -9,10 +9,10 @@ POST http://localhost:3000/api/tasks
 Content-Type: application/json
 
 {
-   "nombre" : "serv",
+   "nombre" : "servidor",
    "estado" : "true",
    "usuarios" :  {
-       "email" : "cliente@siincorreo.com"
+       "email" : "cliente@sincorreo.com"
    }
    
 }
