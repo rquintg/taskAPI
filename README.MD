@@ -3,7 +3,7 @@
 Aplicacion practica de un CRUD desplegada en NodeJS, MongoDB, usando Express y Babel
 
 <p align="center">
-<a href="https://github.com/rquintg"><img src="https://miro.medium.com/max/1400/1*M10QaO1mZCk_jvH2EBNmaQ.jpeg" style="width:600px !important; height:300px !important" alt="node express mongoDB"></a>
+<img src="https://miro.medium.com/max/1400/1*M10QaO1mZCk_jvH2EBNmaQ.jpeg" style="width:550px !important; height:300px !important" alt="node express mongoDB"></a>
 </p>
 
 ## Tabla de contenido
@@ -17,19 +17,19 @@ Aplicacion practica de un CRUD desplegada en NodeJS, MongoDB, usando Express y B
 
 _Recordemos que solo esta desplegado el Backend, el Front esta en proceso_
 
-Mira **Dkdir** para conocer como desplegar el proyecto.
+Mira **Intalacion** para conocer como desplegar el proyecto.
 
 
 ### Pre-requisitos 📋
 
 _Frameworks y dependencies que necesitas_
 s
-```
+
 - [NodeJS](https://nodejs.org/es/download/)
 - [MongoDB](https://cloud.mongodb.com/)
 - [express](https://expressjs.com/es/)
 - [mongoose](https://mongoosejs.com/)
-```
+
 
 ### Instalación 🔧
 
