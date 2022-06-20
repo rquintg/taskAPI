@@ -23,7 +23,7 @@ var taskShema = new _mongoose.Schema({
     "default": false
   },
   usuarios: {
-    type: _mongoose.Schema.Types.ObjectId,
+    type: _mongoose.Schema.Types.String,
     ref: 'usuarios'
   }
 }, {
