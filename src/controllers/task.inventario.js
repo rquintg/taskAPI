@@ -66,7 +66,7 @@ export const createTask = async (req, res) => {
 
         const inventarioBD = await Task.findOne({
             $or: [
-                {serial}, {modelo}
+                {serial},
             ]
         });
         //console.log(inventarioBD)
