@@ -49,12 +49,12 @@ export const createTask = async (req, res) => {
         if(!usuarioBD){// no existe usuario
             return res.status(404).send({message: `El usuario: ${email} no existe`});
         }
-        // console.log(req.body)
+         console.log(usuarioBD)
         
         const newTasks = new Task({
         nombre: req.body.nombre,
         estado: req.body.estado ? req.body.estado : false,
-        usuarios: usuarioBD._id
+        usuarios: usuarioBD.email
        })
     const taskSave = await newTasks.save();
     // console.log(newTasks)

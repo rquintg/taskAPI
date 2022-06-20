@@ -31,22 +31,22 @@ const taskShema = new Schema({
         type: Number
     },
     usuarios: {
-        type: Schema.Types.ObjectId,
+        type: Schema.Types.String,
         ref: 'usuarios',
         required: true
     },
     marcas: {
-        type: Schema.Types.ObjectId,
+        type: Schema.Types.String,
         ref: 'marcas',
         required: true
     },
     estados: {
-        type: Schema.Types.ObjectId,
+        type: Schema.Types.String,
         ref: 'estados_de_equipo',
         required: true
     },
      tipoEquipos: {
-         type: Schema.Types.ObjectId,
+         type: Schema.Types.String,
          ref: 'tipo_de_equipos',
          required: true
      }

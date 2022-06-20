@@ -16,9 +16,10 @@ export const findAllTasks = async (req, res) => {
         const{limit, offset} = getPagination(page, size)
 
         const task = await Task.paginate(condition, {offset , limit});
+        const task1 = await Task.find({estado: true});
         res.json({
             totalItems: task.totalDocs,
-            tasks: task.docs,
+            tasks: task1,
             totalPages: task.totalPages,
             currentPage: task.page -1
         })

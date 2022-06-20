@@ -72,7 +72,7 @@ export const createTask = async (req, res) => {
         //console.log(inventarioBD)
         if(inventarioBD){
             return res.status(400).json({
-                msj: 'Ya existe serial o modelo'
+                msj: 'Ya existe serial'
                 
             })
         }
@@ -111,10 +111,10 @@ export const createTask = async (req, res) => {
         foto: req.body.foto,
         color: req.body.color,
         precio: req.body.precio,
-        usuarios: usuarioBD._id,
-        marcas:  marcasBD._id,
-        estados: estadosBD._id,
-        tipoEquipos: tipoEquipoBD._id
+        usuarios: usuarioBD.email,
+        marcas:  marcasBD.nombre,
+        estados: estadosBD.nombre,
+        tipoEquipos: tipoEquipoBD.nombre
        })
     const taskSave = await newTasks.save();
     // console.log(newTasks)
