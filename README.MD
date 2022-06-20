@@ -17,7 +17,7 @@ Aplicacion practica de un CRUD desplegada en NodeJS, MongoDB, usando Express y B
 
 _Recordemos que solo esta desplegado el Backend, el Front esta en proceso_
 
-Mira **Intalacion** para conocer como desplegar el proyecto.
+Mira **Instalacion** para conocer como desplegar el proyecto.
 
 
 ### Pre-requisitos 📋
