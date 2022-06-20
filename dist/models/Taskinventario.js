@@ -40,22 +40,22 @@ var taskShema = new _mongoose.Schema({
     type: Number
   },
   usuarios: {
-    type: _mongoose.Schema.Types.ObjectId,
+    type: _mongoose.Schema.Types.String,
     ref: 'usuarios',
     required: true
   },
   marcas: {
-    type: _mongoose.Schema.Types.ObjectId,
+    type: _mongoose.Schema.Types.String,
     ref: 'marcas',
     required: true
   },
   estados: {
-    type: _mongoose.Schema.Types.ObjectId,
+    type: _mongoose.Schema.Types.String,
     ref: 'estados_de_equipo',
     required: true
   },
   tipoEquipos: {
-    type: _mongoose.Schema.Types.ObjectId,
+    type: _mongoose.Schema.Types.String,
     ref: 'tipo_de_equipos',
     required: true
   }

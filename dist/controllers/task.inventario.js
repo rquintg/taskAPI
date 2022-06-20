@@ -174,7 +174,7 @@ var createTask = /*#__PURE__*/function () {
             }
 
             return _context3.abrupt("return", res.status(400).json({
-              msj: 'Ya existe serial o modelo'
+              msj: 'Ya existe serial'
             }));
 
           case 9:
@@ -262,10 +262,10 @@ var createTask = /*#__PURE__*/function () {
               foto: req.body.foto,
               color: req.body.color,
               precio: req.body.precio,
-              usuarios: usuarioBD._id,
-              marcas: marcasBD._id,
-              estados: estadosBD._id,
-              tipoEquipos: tipoEquipoBD._id
+              usuarios: usuarioBD.email,
+              marcas: marcasBD.nombre,
+              estados: estadosBD.nombre,
+              tipoEquipos: tipoEquipoBD.nombre
             });
             _context3.next = 34;
             return newTasks.save();

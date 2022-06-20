@@ -27,16 +27,18 @@ var _inventario = _interopRequireDefault(require("./routes/inventario.routes"));
 
 // app contiene la dependencia express
 // creamos y cofiguramos  servidor con express
+var dotenv = require('dotenv').config();
+
 var app = (0, _express["default"])(); // coonfiguracion puerto
 
-app.set('port', process.env.PORT || 3000); //middlewares, morgan nos sirve para mostrar por consola las peticiones htpp
+app.set('port', process.env.PORT || 5000); //middlewares, morgan nos sirve para mostrar por consola las peticiones htpp
 // express.json nos permite reconocer que el objeto que recibimos es JSON
 // cors nos permite extender la app de diferentes servidoress
+//const corsOptions = { origin: 'http://localhost:5000'}
+//app.use(cors(corsOptions));
+//const cors = require('cors');
 
-var corsOptions = {
-  origin: 'http://localhost:3000'
-};
-app.use((0, _cors["default"])(corsOptions));
+app.use((0, _cors["default"])());
 app.use((0, _morgan["default"])('dev'));
 app.use(_express["default"].json());
 app.use(_express["default"].urlencoded({

@@ -130,35 +130,35 @@ var createTask = /*#__PURE__*/function () {
             }));
 
           case 15:
-            // console.log(req.body)
+            console.log(usuarioBD);
             newTasks = new _TasktipodeEquipo["default"]({
               nombre: req.body.nombre,
               estado: req.body.estado ? req.body.estado : false,
-              usuarios: usuarioBD._id
+              usuarios: usuarioBD.email
             });
-            _context2.next = 18;
+            _context2.next = 19;
             return newTasks.save();
 
-          case 18:
+          case 19:
             taskSave = _context2.sent;
             // console.log(newTasks)
             res.json(taskSave);
-            _context2.next = 25;
+            _context2.next = 26;
             break;
 
-          case 22:
-            _context2.prev = 22;
+          case 23:
+            _context2.prev = 23;
             _context2.t0 = _context2["catch"](2);
             res.status(500).json({
               message: _context2.t0.message || 'algo salio mal mientras creabamos el tipo de equipo'
             });
 
-          case 25:
+          case 26:
           case "end":
             return _context2.stop();
         }
       }
-    }, _callee2, null, [[2, 22]]);
+    }, _callee2, null, [[2, 23]]);
   }));
 
   return function createTask(_x3, _x4) {

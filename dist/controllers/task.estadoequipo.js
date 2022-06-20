@@ -18,7 +18,7 @@ var _getPagination2 = require("../libs/getPagination");
 // asignamos las peticiones, create,delete,find,uodate...
 var findAllTasks = /*#__PURE__*/function () {
   var _ref = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(req, res) {
-    var _req$query, size, page, nombre, condition, _getPagination, limit, offset, task;
+    var _req$query, size, page, nombre, condition, _getPagination, limit, offset, task, task1;
 
     return _regenerator["default"].wrap(function _callee$(_context) {
       while (1) {
@@ -41,28 +41,35 @@ var findAllTasks = /*#__PURE__*/function () {
 
           case 6:
             task = _context.sent;
+            _context.next = 9;
+            return _Taskestadoequipo["default"].find({
+              estado: true
+            });
+
+          case 9:
+            task1 = _context.sent;
             res.json({
               totalItems: task.totalDocs,
-              tasks: task.docs,
+              tasks: task1,
               totalPages: task.totalPages,
               currentPage: task.page - 1
             });
-            _context.next = 13;
+            _context.next = 16;
             break;
 
-          case 10:
-            _context.prev = 10;
+          case 13:
+            _context.prev = 13;
             _context.t0 = _context["catch"](0);
             res.status(500).json({
               message: _context.t0.message || 'algo salio mal mientras consultabamos el estado de equipo'
             });
 
-          case 13:
+          case 16:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee, null, [[0, 10]]);
+    }, _callee, null, [[0, 13]]);
   }));
 
   return function findAllTasks(_x, _x2) {
