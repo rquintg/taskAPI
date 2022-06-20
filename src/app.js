@@ -11,6 +11,7 @@ import Taskinventario from './routes/inventario.routes'
 // app contiene la dependencia express
 
 // creamos y cofiguramos  servidor con express
+const dotenv = require('dotenv').config();
 const app = express();
 
 // coonfiguracion puerto
