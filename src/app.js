@@ -1,12 +1,15 @@
 import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
+import config from "./config";
 import TasksRoutes from './routes/tasks.routes';
 import TaskTipoEquipo from './routes/tipoequipo.routes'
 import TaskEstadoEquipo from './routes/estadoequipo.routes'
 import Taskusuarios from './routes/usuarios.routes'
 import Taskmarcas from './routes/marcas.routes'
 import Taskinventario from './routes/inventario.routes'
+// MÓDULO AUTENTICACIÓN & AUTORIZACIÓN
+const auth = require('./routes/auth')
 
 // app contiene la dependencia express
 
@@ -15,7 +18,7 @@ const dotenv = require('dotenv').config();
 const app = express();
 
 // coonfiguracion puerto
-app.set('port', process.env.PORT || 5000);
+app.set('port', config.port || 5000);
 
 //middlewares, morgan nos sirve para mostrar por consola las peticiones htpp
 // express.json nos permite reconocer que el objeto que recibimos es JSON
@@ -45,5 +48,8 @@ app.use('/api/task', TaskEstadoEquipo)
 app.use('/api/users',Taskusuarios)
 app.use('/api/brands', Taskmarcas)
 app.use('/api/inventory', Taskinventario)
+
+
+app.use('/api/auth', auth)
 
 export default app;

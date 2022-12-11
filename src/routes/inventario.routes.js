@@ -1,18 +1,21 @@
 import {Router} from 'express'
 import * as taskctrl from '../controllers/task.inventario'
 
+const validarJwt = require('../middlewares/validarJwt')
+const { esAdmin } = require('../middlewares/validarRol')
+
 const router = Router()
 
-router.post('/', taskctrl.createTask)
+router.post('/', validarJwt, esAdmin, taskctrl.createTask)
 
-router.get ('/', taskctrl.findAllTasks )
+router.get ('/', validarJwt,taskctrl.findAllTasks )
 
-//outer.get('/done', taskctrl.findAllDoneTasks)
+//router.get('/done', taskctrl.findAllDoneTasks)
 
 router.get('/:id', taskctrl.findOneTask)
 
-router.delete('/:id', taskctrl.deleteTask)
+router.delete('/:id', validarJwt, esAdmin, taskctrl.deleteTask)
 
-router.put('/:id', taskctrl.updateTask)
+router.put('/:id', validarJwt, esAdmin, taskctrl.updateTask)
 
 export default router

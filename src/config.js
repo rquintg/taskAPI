@@ -5,4 +5,6 @@ config();
 
 export default {
     mongodbURL: process.env.MONGO_URI,
+    port: process.env.PORT,
+    key: process.env.SECRET_KEY,
 };
